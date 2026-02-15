@@ -1,7 +1,7 @@
 import Foundation
 import AppKit
 
-enum ClipKind: String, Codable {
+enum ClipKind: String, Codable, CaseIterable {
     case text
     case link
     case code

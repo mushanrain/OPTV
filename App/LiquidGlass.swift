@@ -4,13 +4,19 @@ import SwiftUI
 struct LiquidGlassModifier: ViewModifier {
     var cornerRadius: CGFloat
     var elevation: CGFloat
+    @Environment(\.colorScheme) var colorScheme
 
     func body(content: Content) -> some View {
         content
             .background(materialBackground)
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay(highlightStroke)
-            .shadow(color: Color.black.opacity(0.18), radius: elevation, x: 0, y: elevation / 2)
+            .shadow(
+                color: Color.black.opacity(colorScheme == .light ? 0.12 : 0.18),
+                radius: elevation,
+                x: 0,
+                y: elevation / 2
+            )
     }
 
     @ViewBuilder
@@ -22,8 +28,8 @@ struct LiquidGlassModifier: ViewModifier {
                     .fill(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(0.38),
-                                Color.white.opacity(0.06)
+                                Color.white.opacity(colorScheme == .light ? 0.6 : 0.38),
+                                Color.white.opacity(colorScheme == .light ? 0.15 : 0.06)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -38,8 +44,8 @@ struct LiquidGlassModifier: ViewModifier {
             .strokeBorder(
                 LinearGradient(
                     colors: [
-                        Color.white.opacity(0.55),
-                        Color.white.opacity(0.12)
+                        Color.white.opacity(colorScheme == .light ? 0.7 : 0.55),
+                        Color.white.opacity(colorScheme == .light ? 0.2 : 0.12)
                     ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing

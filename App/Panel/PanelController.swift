@@ -11,7 +11,7 @@ final class PanelController: NSObject, NSWindowDelegate {
     private var escMonitor: Any?
     private var escGlobalMonitor: Any?
 
-    private let width: CGFloat = 480
+    private let width: CGFloat = 500
     private let rowHeight: CGFloat = 82
     private let rows: CGFloat = 7
 
@@ -30,7 +30,7 @@ final class PanelController: NSObject, NSWindowDelegate {
         panel.backgroundColor = .clear
         panel.hasShadow = false
         panel.isMovableByWindowBackground = true
-        panel.appearance = NSAppearance(named: .vibrantLight)
+        panel.appearance = nil
         panel.level = .statusBar
         panel.collectionBehavior = [.fullScreenAuxiliary, .canJoinAllSpaces]
         panel.titleVisibility = .hidden
@@ -51,7 +51,7 @@ final class PanelController: NSObject, NSWindowDelegate {
         }))
 
         let blur = NSVisualEffectView(frame: rect)
-        blur.material = .hudWindow
+        blur.material = .popover
         blur.blendingMode = .behindWindow
         blur.state = .active
         if #available(macOS 10.14, *) {
@@ -67,32 +67,12 @@ final class PanelController: NSObject, NSWindowDelegate {
         }
         container.layer?.masksToBounds = true
         container.layer?.borderWidth = 1.0
-        container.layer?.borderColor = NSColor.white.withAlphaComponent(0.22).cgColor
-        container.layer?.backgroundColor = NSColor.windowBackgroundColor.withAlphaComponent(0.08).cgColor
+        container.layer?.borderColor = NSColor.separatorColor.withAlphaComponent(0.3).cgColor
+        container.layer?.backgroundColor = NSColor.clear.cgColor
 
         panel.contentView = container
 
         container.addSubview(blur)
-        let tintView = NSView(frame: rect)
-        tintView.translatesAutoresizingMaskIntoConstraints = false
-        tintView.wantsLayer = true
-        if let layer = tintView.layer {
-            let gradient = CAGradientLayer()
-            gradient.colors = [
-                NSColor(calibratedRed: 0.35, green: 0.56, blue: 0.98, alpha: 0.38).cgColor,
-                NSColor(calibratedRed: 0.15, green: 0.20, blue: 0.35, alpha: 0.45).cgColor
-            ]
-            gradient.locations = [0.0, 1.0]
-            gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
-            gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-            gradient.frame = layer.bounds
-            gradient.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
-            layer.insertSublayer(gradient, at: 0)
-            layer.opacity = 0.8
-            layer.masksToBounds = true
-            layer.cornerRadius = container.layer?.cornerRadius ?? 26
-        }
-        container.addSubview(tintView)
         container.addSubview(hosting)
 
         NSLayoutConstraint.activate([
@@ -100,13 +80,6 @@ final class PanelController: NSObject, NSWindowDelegate {
             blur.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             blur.topAnchor.constraint(equalTo: container.topAnchor),
             blur.bottomAnchor.constraint(equalTo: container.bottomAnchor),
-        ])
-
-        NSLayoutConstraint.activate([
-            tintView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            tintView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            tintView.topAnchor.constraint(equalTo: container.topAnchor),
-            tintView.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         ])
 
         hosting.translatesAutoresizingMaskIntoConstraints = false
@@ -121,8 +94,21 @@ final class PanelController: NSObject, NSWindowDelegate {
     func show() {
         previousApp = NSWorkspace.shared.frontmostApplication
         positionNearMouse()
+
+        // Start invisible and slightly scaled down
+        panel.alphaValue = 0
+        panel.contentView?.layer?.transform = CATransform3DMakeScale(0.97, 0.97, 1.0)
+
         NSApp.activate(ignoringOtherApps: true)
         panel.makeKeyAndOrderFront(nil)
+
+        // Animate in
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = 0.2
+            context.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            panel.animator().alphaValue = 1.0
+            panel.contentView?.layer?.transform = CATransform3DIdentity
+        })
 
         // 监听 ESC 关闭（本地 + 全局，确保可拦截 TextField 焦点场景）
         escMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
@@ -140,7 +126,14 @@ final class PanelController: NSObject, NSWindowDelegate {
     }
 
     func hide() {
-        panel.orderOut(nil)
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = 0.15
+            context.timingFunction = CAMediaTimingFunction(name: .easeIn)
+            panel.animator().alphaValue = 0
+        }, completionHandler: { [weak self] in
+            self?.panel.orderOut(nil)
+            self?.panel.alphaValue = 1  // Reset for next show
+        })
         if let m = escMonitor { NSEvent.removeMonitor(m); escMonitor = nil }
         if let gm = escGlobalMonitor { NSEvent.removeMonitor(gm); escGlobalMonitor = nil }
     }

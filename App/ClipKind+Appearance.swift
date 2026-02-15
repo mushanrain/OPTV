@@ -40,4 +40,14 @@ extension ClipKind {
             ]
         }
     }
+
+    var chipColor: Color {
+        switch self {
+        case .text: return .blue
+        case .link: return .cyan
+        case .code: return .orange
+        case .image: return .green
+        case .file: return .gray
+        }
+    }
 }

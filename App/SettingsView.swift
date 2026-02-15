@@ -266,26 +266,18 @@ struct SettingsView: View {
 
     private var backgroundLayer: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    Color(red: 0.04, green: 0.08, blue: 0.18),
-                    Color(red: 0.12, green: 0.17, blue: 0.31)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            Color(nsColor: .windowBackgroundColor)
+                .ignoresSafeArea()
 
             RadialGradient(
                 colors: [
-                    Color.white.opacity(0.25),
+                    Color.accentColor.opacity(0.08),
                     Color.clear
                 ],
                 center: .topTrailing,
                 startRadius: 12,
                 endRadius: 520
             )
-            .blendMode(.plusLighter)
             .blur(radius: 60)
         }
         .ignoresSafeArea()
@@ -548,10 +540,10 @@ private struct SettingRowModifier: ViewModifier {
             .padding(.vertical, 10)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(Color.white.opacity(0.04))
+                    .fill(Color.primary.opacity(0.04))
                     .overlay(
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color.white.opacity(0.08), lineWidth: 0.7)
+                            .stroke(Color.primary.opacity(0.08), lineWidth: 0.7)
                             .blendMode(.overlay)
                     )
             )
