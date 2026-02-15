@@ -29,7 +29,7 @@ final class PanelController: NSObject, NSWindowDelegate {
         panel.isOpaque = false
         panel.backgroundColor = .clear
         panel.hasShadow = false
-        panel.isMovableByWindowBackground = true
+        panel.isMovableByWindowBackground = false
         panel.appearance = nil
         panel.level = .statusBar
         panel.collectionBehavior = [.fullScreenAuxiliary, .canJoinAllSpaces]

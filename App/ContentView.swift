@@ -76,6 +76,7 @@ struct ContentView: View {
                 )
             }
         }
+        .background(WindowDragView())
     }
 
     private var searchField: some View {
@@ -581,5 +582,21 @@ private struct FilterChip: View {
             .foregroundColor(isSelected ? .accentColor : .secondary)
         }
         .buttonStyle(.plain)
+    }
+}
+
+/// 支持拖动窗口的背景视图
+struct WindowDragView: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        view.wantsLayer = true
+        return view
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {
+        // 启用鼠标拖动来移动窗口
+        DispatchQueue.main.async {
+            nsView.window?.isMovableByWindowBackground = true
+        }
     }
 }
