@@ -314,6 +314,9 @@ private struct RowView: View {
         )
         .scaleEffect(isHovering ? 1.01 : 1.0)
         .onTapGesture { onSelect(item) }
+        .onDrag {
+            provideDragItem()
+        }
         .onHover { hovering in
             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                 isHovering = hovering
@@ -533,6 +536,23 @@ private struct RowView: View {
     private var appIconImage: NSImage? {
         guard let iconPath = item.sourceIconPath else { return nil }
         return NSImage(contentsOfFile: iconPath)
+    }
+
+    private func provideDragItem() -> NSItemProvider {
+        switch item.kind {
+        case .image:
+            // 拖拽图片
+            if let path = item.imagePath, let image = NSImage(contentsOfFile: path) {
+                return NSItemProvider(object: image)
+            }
+        default:
+            // 拖拽文本（包括链接、代码、文件路径）
+            if let text = item.text {
+                return NSItemProvider(object: text as NSString)
+            }
+        }
+        // 降级方案：空文本
+        return NSItemProvider(object: "" as NSString)
     }
 }
 
