@@ -1,0 +1,42 @@
+name: Build OptV
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Build
+        run: |
+          xcodebuild \
+            -project OptV.xcodeproj \
+            -scheme OptV \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package app
+        run: |
+          mkdir -p dist
+          cp -R build/Build/Products/Release/OptV.app dist/OptV.app
+          cd dist && zip -r OptV.app.zip OptV.app
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OptV.app
+          path: dist/OptV.app.zip
