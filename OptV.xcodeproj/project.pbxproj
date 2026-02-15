@@ -1,0 +1,180 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+        10A1A0012C00000100000001 /* OptVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0212C00000100000001 /* OptVApp.swift */; };
+        10A1A0022C00000100000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0222C00000100000001 /* ContentView.swift */; };
+        10A1A0032C00000100000001 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0232C00000100000001 /* Models.swift */; };
+        10A1A0042C00000100000001 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0242C00000100000001 /* HistoryStore.swift */; };
+        10A1A0052C00000100000001 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0252C00000100000001 /* ClipboardManager.swift */; };
+        10A1A0062C00000100000001 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0262C00000100000001 /* HotKeyManager.swift */; };
+        10A1A0072C00000100000001 /* PanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0272C00000100000001 /* PanelController.swift */; };
+        10A1A0082C00000100000001 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A0282C00000100000001 /* Crypto.swift */; };
+        10A1A0332C00000100000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A02C2C00000100000001 /* SettingsView.swift */; };
+        10A1A0342C00000100000001 /* AppIconFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A02D2C00000100000001 /* AppIconFactory.swift */; };
+        10A1A0322C00000100000001 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A1A02B2C00000100000001 /* Carbon.framework */; };
+        10A1A0352C00000100000001 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1A02F2C00000100000001 /* SettingsWindowController.swift */; };
+        10C1A0012C00000100000001 /* LiquidGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1A0212C00000100000001 /* LiquidGlass.swift */; };
+        10C1A0022C00000100000001 /* ClipKind+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1A0222C00000100000001 /* ClipKind+Appearance.swift */; };
+        10A1A1202C00000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A1A1212C00000100000001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        10A1A0112C00000100000001 /* OptV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OptV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        10A1A0212C00000100000001 /* OptVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptVApp.swift; path = App/OptVApp.swift; sourceTree = "<group>"; };
+        10A1A0222C00000100000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = App/ContentView.swift; sourceTree = "<group>"; };
+        10A1A0232C00000100000001 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = App/Models.swift; sourceTree = "<group>"; };
+        10A1A0242C00000100000001 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryStore.swift; path = App/HistoryStore.swift; sourceTree = "<group>"; };
+        10A1A0252C00000100000001 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClipboardManager.swift; path = App/ClipboardManager.swift; sourceTree = "<group>"; };
+        10A1A0262C00000100000001 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotKeyManager.swift; path = App/HotKeyManager.swift; sourceTree = "<group>"; };
+        10A1A0272C00000100000001 /* PanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PanelController.swift; path = App/Panel/PanelController.swift; sourceTree = "<group>"; };
+        10A1A0282C00000100000001 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Crypto.swift; path = App/Crypto.swift; sourceTree = "<group>"; };
+        10A1A0292C00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        10A1A02C2C00000100000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = App/SettingsView.swift; sourceTree = "<group>"; };
+        10A1A02D2C00000100000001 /* AppIconFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppIconFactory.swift; path = App/AppIconFactory.swift; sourceTree = "<group>"; };
+        10A1A02B2C00000100000001 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+        10A1A02F2C00000100000001 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsWindowController.swift; path = App/SettingsWindowController.swift; sourceTree = "<group>"; };
+        10A1A1212C00000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OptV/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+        10C1A0212C00000100000001 /* LiquidGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiquidGlass.swift; path = App/LiquidGlass.swift; sourceTree = "<group>"; };
+        10C1A0222C00000100000001 /* ClipKind+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ClipKind+Appearance.swift"; path = "App/ClipKind+Appearance.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+        10A1A0412C00000100000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+                10A1A0322C00000100000001 /* Carbon.framework in Frameworks */,
+        ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+        10A1A0512C00000100000001 = {isa = PBXGroup; children = (
+                10A1A0612C00000100000001 /* OptV */,
+                10A1A0122C00000100000001 /* Products */,
+        ); sourceTree = "<group>"; };
+        10A1A0122C00000100000001 /* Products */ = {isa = PBXGroup; children = (
+                10A1A0112C00000100000001 /* OptV.app */,
+        ); name = Products; sourceTree = "<group>"; };
+        10A1A0612C00000100000001 /* OptV */ = {isa = PBXGroup; children = (
+                10A1A0212C00000100000001 /* OptVApp.swift */,
+                10A1A0222C00000100000001 /* ContentView.swift */,
+                10A1A0272C00000100000001 /* PanelController.swift */,
+                10A1A0232C00000100000001 /* Models.swift */,
+                10A1A0242C00000100000001 /* HistoryStore.swift */,
+                10A1A0252C00000100000001 /* ClipboardManager.swift */,
+                10A1A0262C00000100000001 /* HotKeyManager.swift */,
+                10A1A0282C00000100000001 /* Crypto.swift */,
+                10A1A02C2C00000100000001 /* SettingsView.swift */,
+                10A1A02F2C00000100000001 /* SettingsWindowController.swift */,
+                10A1A02D2C00000100000001 /* AppIconFactory.swift */,
+                10C1A0212C00000100000001 /* LiquidGlass.swift */,
+                10C1A0222C00000100000001 /* ClipKind+Appearance.swift */,
+                10A1A0292C00000100000001 /* Info.plist */,
+                10A1A02B2C00000100000001 /* Carbon.framework */,
+                10A1A1212C00000100000001 /* Assets.xcassets */,
+        ); name = OptV; path = ""; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+        10A1A0712C00000100000001 /* OptV */ = {isa = PBXNativeTarget; buildConfigurationList = 10A1A0B12C00000100000001 /* Build configuration list for PBXNativeTarget "OptV" */; buildPhases = (
+                10A1A0A22C00000100000003 /* Generate App Icon (Assets) */,
+                10A1A0912C00000100000001 /* Sources */,
+                10A1A0412C00000100000001 /* Frameworks */,
+                10A1A0A12C00000100000001 /* Resources */,
+        ); buildRules = ( ); dependencies = ( ); name = OptV; productName = OptV; productReference = 10A1A0112C00000100000001 /* OptV.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+        10A1A0812C00000100000001 /* Project object */ = {isa = PBXProject; attributes = { LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; ORGANIZATIONNAME = ""; }; buildConfigurationList = 10A1A0C12C00000100000001 /* Build configuration list for PBXProject "OptV" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = ( en, Base, ); mainGroup = 10A1A0512C00000100000001; productRefGroup = 10A1A0122C00000100000001 /* Products */; projectDirPath = ""; projectRoot = ""; targets = ( 10A1A0712C00000100000001 /* OptV */, ); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+        10A1A0A12C00000100000001 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+                10A1A1202C00000100000001 /* Assets.xcassets in Resources */,
+        ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+        10A1A0912C00000100000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+                10A1A0012C00000100000001 /* OptVApp.swift in Sources */,
+                10A1A0022C00000100000001 /* ContentView.swift in Sources */,
+                10A1A0032C00000100000001 /* Models.swift in Sources */,
+                10A1A0042C00000100000001 /* HistoryStore.swift in Sources */,
+                10A1A0052C00000100000001 /* ClipboardManager.swift in Sources */,
+                10A1A0062C00000100000001 /* HotKeyManager.swift in Sources */,
+                10A1A0072C00000100000001 /* PanelController.swift in Sources */,
+                10A1A0082C00000100000001 /* Crypto.swift in Sources */,
+                10A1A0332C00000100000001 /* SettingsView.swift in Sources */,
+                10A1A0342C00000100000001 /* AppIconFactory.swift in Sources */,
+                10A1A0352C00000100000001 /* SettingsWindowController.swift in Sources */,
+                10C1A0012C00000100000001 /* LiquidGlass.swift in Sources */,
+                10C1A0022C00000100000001 /* ClipKind+Appearance.swift in Sources */,
+        ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+        10A1A0D12C00000100000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CODE_SIGN_STYLE = Automatic;
+                COMBINE_HIDPI_IMAGES = YES;
+                DEVELOPMENT_TEAM = "";
+                ENABLE_HARDENED_RUNTIME = YES;
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                INFOPLIST_FILE = OptV/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+                MACOSX_DEPLOYMENT_TARGET = 12.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.OptV;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = macosx;
+                SWIFT_VERSION = 5.0;
+                SUPPORTS_MACCATALYST = NO;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+            }; name = Debug; };
+        10A1A0E12C00000100000001 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CODE_SIGN_STYLE = Automatic;
+                COMBINE_HIDPI_IMAGES = YES;
+                DEVELOPMENT_TEAM = "";
+                ENABLE_HARDENED_RUNTIME = YES;
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                INFOPLIST_FILE = OptV/Info.plist;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+                MACOSX_DEPLOYMENT_TARGET = 12.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.OptV;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = macosx;
+                SWIFT_VERSION = 5.0;
+                SUPPORTS_MACCATALYST = NO;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+            }; name = Release; };
+
+        10A1A0F12C00000100000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+                PRODUCT_NAME = OptV;
+            }; name = Debug; };
+        10A1A1012C00000100000001 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+                PRODUCT_NAME = OptV;
+            }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+        10A1A0B12C00000100000001 /* Build configuration list for PBXNativeTarget "OptV" */ = {isa = XCConfigurationList; buildConfigurations = (
+                10A1A0D12C00000100000001 /* Debug */,
+                10A1A0E12C00000100000001 /* Release */,
+        ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+        10A1A0C12C00000100000001 /* Build configuration list for PBXProject "OptV" */ = {isa = XCConfigurationList; buildConfigurations = (
+                10A1A0F12C00000100000001 /* Debug */,
+                10A1A1012C00000100000001 /* Release */,
+        ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+/* End XCConfigurationList section */
+
+/* Begin PBXShellScriptBuildPhase section */
+        10A1A0A22C00000100000003 /* Generate App Icon (Assets) */ = {isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = ( ); inputFileListPaths = ( ); inputPaths = ( ); name = "Generate App Icon (Assets)"; outputFileListPaths = ( ); outputPaths = ( ); runOnlyForDeploymentPostprocessing = 0; shellPath = /bin/zsh; shellScript = "ASSETS_PATH=\"${SRCROOT}/OptV/Assets.xcassets/AppIcon.appiconset\"\n/usr/bin/xcrun swift \"${SRCROOT}/scripts/gen_appicon.swift\"\n"; };
+/* End PBXShellScriptBuildPhase section */
+
+    };
+    rootObject = 10A1A0812C00000100000001 /* Project object */;
+}

@@ -1,0 +1,32 @@
+# Xcode build artifacts
+build/
+DerivedData/
+
+# Distribution
+dist/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Xcode user data
+*.xcuserdata
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Xcode auto-generated files
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Xcode Developer Tools cache
+com.apple.DeveloperTools/
